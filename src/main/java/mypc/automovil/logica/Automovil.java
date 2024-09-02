@@ -1,24 +1,34 @@
 
 package mypc.automovil.logica;
 
-public class Automovil {
-    private int id;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Automovil implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;//Valor automatizado incremental por tanto separamos del resto de los atributos
+    
     private String modelo;
     private String marca;
     private String motor;
-    private String colo;
+    private String color;
     private String patente; 
     private int cantPuertas;
 
     public Automovil() {
     }
 
-    public Automovil(int id, String modelo, String marca, String motor, String colo, String patente, int cantPuertas) {
+    public Automovil(int id, String modelo, String marca, String motor, String color, String patente, int cantPuertas) {
         this.id = id;
         this.modelo = modelo;
         this.marca = marca;
         this.motor = motor;
-        this.colo = colo;
+        this.color = color;
         this.patente = patente;
         this.cantPuertas = cantPuertas;
     }
@@ -55,12 +65,12 @@ public class Automovil {
         this.motor = motor;
     }
 
-    public String getColo() {
-        return colo;
+    public String getColor() {
+        return color;
     }
 
-    public void setColo(String colo) {
-        this.colo = colo;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getPatente() {
@@ -77,6 +87,9 @@ public class Automovil {
 
     public void setCantPuertas(int cantPuertas) {
         this.cantPuertas = cantPuertas;
-    }  
+    }
+    
+    
 
+    
 }
