@@ -1,6 +1,7 @@
 
 package mypc.automovil.logica;
 
+import java.util.List;
 import mypc.automovil.persistencia.ControladoraPersistencia;
 
 public class Controladora {
@@ -22,5 +23,34 @@ public class Controladora {
         controlPersis.agregarAutomovil(auto);
         
     }
+
+    public List<Automovil> traerAutos() {
+        return controlPersis.traerAutos();
+    }
+
+    public void borrarAuto(int idAuto) {
+        controlPersis.borrarAuto(idAuto);//Creamos el metodo que arrastramos creando desde el boton eliminar de consultarAutomovil
+        
+    }
+
+    public Automovil traerAuto(int idAuto) {
+        return controlPersis.traerAuto(idAuto);
+    }
+
+    public void modificarAuto(Automovil auto, String modelo, String marca, String motor, 
+            String color, String patente, int cantPuertas) {
+    auto.setModelo(modelo);
+    auto.setMarca(marca);
+    auto.setMotor(motor);
+    auto.setColor(color);
+    auto.setPatente(patente);
+    auto.setCantPuertas(cantPuertas);
+    
+    //Pedimos a persistencia que modifique
+    controlPersis.modificarAuto(auto);
+    
+    }
+
+   
     
 }

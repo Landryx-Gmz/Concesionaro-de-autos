@@ -2,6 +2,8 @@
 package mypc.automovil.igu;
 
 public class Principal extends javax.swing.JFrame {
+    
+    
 
     public Principal() {
         initComponents();
@@ -97,7 +99,12 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
-        // TODO add your handling code here:
+  //1btnConsul creamos la instancia pra poder llamar a la ventana de edicion y sonsulta.Y lo hacemos visible y centrado.
+        ConsultaAutomovil consu = new ConsultaAutomovil();
+        consu.setVisible(true);
+        consu.setLocationRelativeTo(null);
+        
+        
     }//GEN-LAST:event_btnConsultaActionPerformed
 
     private void btnAltaAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaAutoActionPerformed
